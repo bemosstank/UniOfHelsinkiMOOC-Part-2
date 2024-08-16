@@ -5,6 +5,27 @@ public class Program {
 
     public static void main(String[] args) {
         // Test your program here!
+        HashMap<String, String> hashmap = new HashMap<>();
+        hashmap.put("f.e", "for example");
+        hashmap.put("etc.", "and so on");
+        hashmap.put("i.e", "more percisely");
+        printKeys(hashmap);
+        System.out.println("---");
+        printKeysWhere(hashmap, "i");
+    }
+
+    public static void printKeys(HashMap<String, String> hashmap) {
+        for (String keys : hashmap.keySet()) {
+            System.out.println(keys);
+        }
+    }
+
+    public static void printKeysWhere(HashMap<String, String> hashmap, String text) {
+        for (String key : hashmap.keySet()) {
+            if(key.contains(text)){
+                System.out.println(key);
+            }
+        }
     }
 
 }
