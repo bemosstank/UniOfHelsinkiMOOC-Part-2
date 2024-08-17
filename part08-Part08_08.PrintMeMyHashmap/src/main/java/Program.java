@@ -12,6 +12,8 @@ public class Program {
         printKeys(hashmap);
         System.out.println("---");
         printKeysWhere(hashmap, "i");
+        System.out.println("---");
+        printValuesOfKeysWhere(hashmap, ".e");
     }
 
     public static void printKeys(HashMap<String, String> hashmap) {
@@ -19,7 +21,6 @@ public class Program {
             System.out.println(keys);
         }
     }
-
     public static void printKeysWhere(HashMap<String, String> hashmap, String text) {
         for (String key : hashmap.keySet()) {
             if(key.contains(text)){
@@ -27,5 +28,12 @@ public class Program {
             }
         }
     }
-
+    
+    public static void printValuesOfKeysWhere(HashMap<String, String> hashmap, String text){
+        for(String key : hashmap.keySet()){
+            if(key.contains(text)) {
+                System.out.println(hashmap.get(key));
+            }
+        }
+    }
 }
