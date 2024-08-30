@@ -10,7 +10,9 @@ public class Suitcase {
         this.Items = new ArrayList<>();
         this.maximumWeight = maximumWeight;
     }
-
+    public ArrayList<Item> getItem(){
+        return this.Items;
+    }
     public void addItem(Item Item) {
         if (this.totalWeight() + Item.getWeight() > this.maximumWeight) {
             return;
@@ -20,23 +22,15 @@ public class Suitcase {
     }
 
     public int totalWeight() {
-        int summa = 0;
-        int indeksi = 0;
-        while (indeksi < this.Items.size()) {
-        summa += this.Items.get(indeksi).getweight();
-        indeksi++;
-        }
-        return summa;
+        return this.Items.stream()
+                .mapToInt(weight -> weight.getWeight())
+                .reduce(0,(total, weight) -> total + weight);
     }
 
     public void printItems() {
-        int indeksi = 0;
-        while (indeksi < this.Items.size()) {
-        Item t = this.Items.get(indeksi);
-        System.out.println(t);
-        indeksi++;
+        this.Items.stream()
+                .forEach(items -> System.out.println(items));
         }
-    }
 
     public Item heaviestItem() {
         if (this.Items.isEmpty()) {
