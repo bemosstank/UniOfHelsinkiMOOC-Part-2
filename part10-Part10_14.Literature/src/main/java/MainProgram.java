@@ -28,7 +28,7 @@ public class MainProgram {
                 .comparing(Book::getRecommendationAge)
                 .thenComparing(Book::getBookName);
         
-        Collections.sort( list, comparable);
+        Collections.sort(list, comparable);
 
         System.out.println();
 
