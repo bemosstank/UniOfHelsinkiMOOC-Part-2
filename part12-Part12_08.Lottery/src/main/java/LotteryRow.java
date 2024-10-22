@@ -1,6 +1,6 @@
 
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class LotteryRow {
 
@@ -18,13 +18,25 @@ public class LotteryRow {
     public void randomizeNumbers() {
         // Initialize the list for numbers
         this.numbers = new ArrayList<>();
-        // Implement the random number generation here
-        // the method containsNumber is probably useful
+        while (this.numbers.size() < 7) {
+            // Implement the random number generation here
+            int randomNumber = ThreadLocalRandom.current().nextInt(1, 41);
+            // the method containsNumber is probably useful
+            if (!this.numbers.contains(randomNumber)) {
+                
+                this.numbers.add(randomNumber);
+            }
+        }
+
     }
 
     public boolean containsNumber(int number) {
         // Check here whether the number is among the drawn numbers
-        return false;
+        boolean trueOrFalse = false;
+        for(int randomNumber : this.numbers)
+        if (randomNumber == number) {
+            trueOrFalse = true;
+        }
+        return trueOrFalse;
     }
 }
-

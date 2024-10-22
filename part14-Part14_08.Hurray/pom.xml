@@ -1,19 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>tkt</groupId>
     <artifactId>Osa14_08.Hurraa</artifactId>
     <name>Osa14_08.Hurraa</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -27,7 +21,6 @@
             <version>0.4.2</version>
             <scope>test</scope>
         </dependency>
-        
         <dependency>
             <groupId>org.testfx</groupId>
             <artifactId>testfx-junit</artifactId>
@@ -47,7 +40,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-   
     <build>
         <plugins>
             <plugin>
@@ -75,19 +67,16 @@
             </plugin>
         </plugins>
     </build>
-
     <profiles>
         <profile>
             <id>java8</id>
             <activation>
                 <jdk>1.8</jdk>
             </activation>
-
             <properties>
                 <maven.compiler.source>1.8</maven.compiler.source>
                 <maven.compiler.target>1.8</maven.compiler.target>
             </properties>
-
             <dependencies>
                 <dependency>
                     <groupId>org.testfx</groupId>
@@ -138,7 +127,6 @@
             </build>
         </profile>
     </profiles>
-    
     <repositories>
         <repository>
             <id>tmc</id>
@@ -163,7 +151,6 @@
             </snapshots>
         </repository>
     </repositories>
-    
     <pluginRepositories>
         <pluginRepository>
             <id>tmc</id>

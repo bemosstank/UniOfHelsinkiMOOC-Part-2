@@ -6,7 +6,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.chart.LineChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
@@ -15,6 +14,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.scene.chart.BarChart;
 
 public class CyclingStatisticsApplication extends Application {
 
@@ -42,7 +42,7 @@ public class CyclingStatisticsApplication extends Application {
         yAxis.setLabel("Cyclists");
 
         
-        LineChart<String, Number> chart = new LineChart<>(xAxis, yAxis);
+        BarChart<String, Number> chart = new BarChart<>(xAxis, yAxis);
         chart.setLegendVisible(false);
 
         list.setOnMouseClicked((MouseEvent event) -> {
